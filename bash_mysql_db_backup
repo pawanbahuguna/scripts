@@ -1,0 +1,18 @@
+#!/bin/bash
+# Author: Pawan Bahuguna
+# Version: 1.1
+# Simple Bash script for taking Mysql Database Backup.
+# Used it for taking backup of my WordPress website.
+
+# Variables
+FILE=db_bckp.sql.`date +"%Y%m%d%M"`
+
+# Takes Backup of Database
+mysqldump  --opt --single-transaction -u<DB_user_name> -p<password_of_db> DB_name > ~/db_backup/$FILE
+
+# Zip the Database file and repalce with GZ.
+gzip ~/db_backup/$FILE
+
+# Email the database file to your email account
+mailx -s "Backup File" -a ~/db_backup/$FILE.gz <email>
+# End
