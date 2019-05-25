@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: Pawan Bahuguna
-# Version: 1.1
+# Version: 1.2
 # Simple Bash script for taking Mysql Database Backup.
 # Used it for taking backup of my WordPress website.
 
